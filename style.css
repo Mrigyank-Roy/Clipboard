@@ -181,3 +181,113 @@ li {
 .rate-item:hover {
     background-color: #d2e3fc !important;
 }
+
+/* =========================================
+   POPUP MODAL STYLES (UPDATED)
+   ========================================= */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 1px solid #e1e4e8;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #5f6368;
+    margin-bottom: 15px;
+}
+
+/* Updated Rate Us Button */
+.modal-btn {
+    width: 240px;          /* EXACT SAME WIDTH AS COFFEE BUTTON */
+    height: 50px;          /* Fixed height to match the blockiness of the image */
+    margin: 0 auto 12px auto; /* Centers the button horizontally */
+    padding: 0;            /* Remove padding, rely on flexbox for centering */
+    display: flex;         /* Enables perfect centering of text */
+    align-items: center;   /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    font-size: 19px;       /* Larger text to match the image text size */
+    border-radius: 8px;    /* Matches the image corners */
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: transform 0.1s;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.modal-btn:active {
+    transform: scale(0.98);
+}
+
+.rate-btn {
+    background-color: #1a73e8;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Updated Buy Me A Coffee Button Styles */
+.coffee-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the image */
+    margin-top: 0;
+}
+
+.coffee-container img {
+    width: 240px;          /* EXACT SAME WIDTH AS RATE BUTTON */
+    height: auto;          /* Maintains aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+    display: block;
+}
+
+.coffee-container img:active {
+    transform: scale(0.98);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

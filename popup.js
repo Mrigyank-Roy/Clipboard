@@ -111,7 +111,7 @@ function loadTitles() {
             titleList.appendChild(li);  
         });
 
-        // Add "Rate Us" item at the bottom
+        // Add "Rate Us" item at the bottom (Static list item)
         const rateLi = document.createElement('li');
         rateLi.classList.add('title-item', 'rate-item');
         rateLi.draggable = false; 
@@ -247,4 +247,66 @@ function deleteClipboardItem(index) {
     }
 }
 
-loadTitles();
+// ============================================
+// NEW: Rate & Support Popup Logic (Once a Month)
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadTitles(); // Initial load of items
+    checkAndShowRatePopup(); // Check if we need to show the support popup
+});
+
+function checkAndShowRatePopup() {
+    const KEY_LAST_SHOWN = 'lastRatePopupDate';
+    const DAYS_TO_WAIT = 30; // 30 days
+    
+    chrome.storage.sync.get([KEY_LAST_SHOWN], function(data) {
+        const lastShown = data[KEY_LAST_SHOWN];
+        const now = Date.now();
+
+        // Check if never shown OR if 30 days have passed
+        if (!lastShown || (now - lastShown) > (DAYS_TO_WAIT * 24 * 60 * 60 * 1000)) {
+            // Slight delay so the popup doesn't appear instantly on launch
+            setTimeout(showModal, 1000); 
+        }
+    });
+}
+
+function dismissModal() {
+    document.getElementById('rateModal').style.display = 'none';
+    // Reset timer to current time
+    chrome.storage.sync.set({ 'lastRatePopupDate': Date.now() });
+}
+
+function showModal() {
+    const modal = document.getElementById('rateModal');
+    if (!modal) return;
+    
+    modal.style.display = 'flex';
+
+    // 1. Close (X) button
+    document.getElementById('closeModal').addEventListener('click', dismissModal);
+
+    // 2. Rate Us button
+    document.getElementById('rateUsBtn').addEventListener('click', function() {
+        chrome.tabs.create({ 
+            url: 'https://microsoftedge.microsoft.com/addons/detail/clipboard/iepgngkiknjnhgfncpbobhlimhkonphl' 
+        });
+        dismissModal();
+    });
+
+    // 3. Buy Me A Coffee Image Link
+    // We prevent default to use chrome.tabs.create for a reliable new tab
+    document.getElementById('buyMeCoffee').addEventListener('click', function(e) {
+        e.preventDefault(); 
+        chrome.tabs.create({ url: this.href }); 
+        dismissModal();
+    });
+    
+    // 4. Click outside to close
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            dismissModal();
+        }
+    });
+}
