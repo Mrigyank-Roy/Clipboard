@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    width: 280px;
+    height: 400px;
+    background-color: white;
+    color: #1a73e8;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a73e8;
+    cursor: default;
+}
+
+#showPasteBtn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#pasteSection {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 150px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 2px 0;
+    cursor: text;
+}
+
+input {
+    height: 35px;
+}
+
+textarea {
+    height: 90px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a73e8;
+    color: white;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #0f5c8a;
+}
+
+#savedTitlesHeading {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.title-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #f1f3f4;
+    border-radius: 5px;
+    padding: 5px 15px;
+    height: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.drag-handle {
+    color: #5f6368;
+    font-size: 18px;
+    cursor: grab;
+    user-select: none;
+    margin-right: 5px;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.title-text {
+    flex-grow: 1;
+    margin-left: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: #1a73e8;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-btn img {
+    width: 20px;
+    height: 20px;
+    background: none;
+    transition: opacity 0.3s ease;
+}
+
+.icon-btn:hover img {
+    opacity: 0.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    max-height: calc(100% - 180px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.rate-item {
+    background-color: #e8f0fe !important;
+    cursor: pointer !important;
+    border: 1px solid #1a73e8;
+    margin-top: auto;
+}
+
+.rate-item:hover {
+    background-color: #d2e3fc !important;
+}
