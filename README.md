@@ -2,7 +2,7 @@
 
 **The simplest and most reliable clipboard manager.**
 
-🚀 **Extension Link:** [Available on Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/clipboard/iepgngkiknjnhgfncpbobhlimhkonphl)
+🚀 **Extension Link:** [Available on Microsoft Edge Add-ons](https://roybuilds.vercel.app/Clipboard_web/clipboard.html)
 
 A lightweight browser extension designed to help you manage clipboard history, save recurring text snippets, and boost your productivity. Keep your clipboard clean, organized, and accessible with just one click.
 

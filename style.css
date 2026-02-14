@@ -227,15 +227,15 @@ li {
 
 /* Updated Rate Us Button */
 .modal-btn {
-    width: 240px;          /* EXACT SAME WIDTH AS COFFEE BUTTON */
-    height: 50px;          /* Fixed height to match the blockiness of the image */
-    margin: 0 auto 12px auto; /* Centers the button horizontally */
-    padding: 0;            /* Remove padding, rely on flexbox for centering */
-    display: flex;         /* Enables perfect centering of text */
-    align-items: center;   /* Vertical center */
-    justify-content: center; /* Horizontal center */
-    font-size: 19px;       /* Larger text to match the image text size */
-    border-radius: 8px;    /* Matches the image corners */
+    width: 240px;        
+    height: 50px;          
+    margin: 0 auto 12px auto; 
+    padding: 0;           
+    display: flex;        
+    align-items: center; 
+    justify-content: center;
+    font-size: 19px;      
+    border-radius: 8px;  
     cursor: pointer;
     border: none;
     color: white;
@@ -270,13 +270,13 @@ li {
 .coffee-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centers the image */
+    justify-content: center; 
     margin-top: 0;
 }
 
 .coffee-container img {
-    width: 240px;          /* EXACT SAME WIDTH AS RATE BUTTON */
-    height: auto;          /* Maintains aspect ratio */
+    width: 240px;        
+    height: auto;         
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.1s;

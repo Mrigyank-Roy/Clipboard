@@ -139,7 +139,7 @@ function loadTitles() {
         
         rateLi.addEventListener('click', function() {
             chrome.tabs.create({ 
-                url: 'https://microsoftedge.microsoft.com/addons/detail/clipboard/iepgngkiknjnhgfncpbobhlimhkonphl' 
+                url: 'https://roybuilds.vercel.app/Clipboard_web/clipboard.html' 
             });
         });
         
@@ -290,7 +290,7 @@ function showModal() {
     // 2. Rate Us button
     document.getElementById('rateUsBtn').addEventListener('click', function() {
         chrome.tabs.create({ 
-            url: 'https://microsoftedge.microsoft.com/addons/detail/clipboard/iepgngkiknjnhgfncpbobhlimhkonphl' 
+            url: 'https://roybuilds.vercel.app/Clipboard_web/clipboard.html' 
         });
         dismissModal();
     });
